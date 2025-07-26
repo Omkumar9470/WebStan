@@ -6,7 +6,7 @@ import PortfolioSection from "@/components/sections/PortfolioSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import BlogSection from "@/components/sections/BlogSection";
 import CTASection from "@/components/sections/CTASection";
-import ImageGallery from "@/components/sections/ImageGallery";
+import Footer from "@/components/sections/Footer";
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
       <TestimonialSection />
       <BlogSection />
       <CTASection />
-      <ImageGallery />
+      <Footer />
     </div>
   );
 };

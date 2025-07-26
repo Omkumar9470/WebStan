@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ContactPage from "@/components/sections/ContactPage"; // Import the ContactPage
 
 const queryClient = new QueryClient();
 
@@ -16,7 +17,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* ADDED: This new route tells the app to show ContactPage at the /contact URL */}
+          <Route path="/contact" element={<ContactPage />} />
+
+          {/* CATCH-ALL ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
