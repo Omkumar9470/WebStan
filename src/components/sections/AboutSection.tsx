@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import aboutImage from "@/assets/about-image.jpg";
+import aboutImage from "@/assets/2.jpg";
 
 const AboutSection = () => {
   // State to track if the elements are visible on screen

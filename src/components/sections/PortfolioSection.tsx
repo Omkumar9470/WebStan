@@ -83,7 +83,7 @@ const PortfolioSection = () => {
               className={`text-muted-foreground text-lg transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               style={{ transitionDelay: `${words.length * 0.05 + 0.1}s` }}
             >
-              CodeVerve will be collaborating with your team to develop ideas.
+              WebStan will be collaborating with your team to develop ideas.
             </p>
           </div>
           <div 

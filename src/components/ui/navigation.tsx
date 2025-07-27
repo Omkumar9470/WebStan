@@ -1,43 +1,77 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logoImage from "@/assets/1.png"; // Import the new logo
+import logoImage from "@/assets/1.png"; 
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false); // New state for mobile dropdown
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
+  const dropdownRef = useRef<HTMLDivElement>(null); 
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const brandName = "Webstan";
+  const letters = brandName.split("");
+
+  // Hides navbar on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 20);
       setPrevScrollPos(currentScrollPos);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
-  // Function to handle smooth scrolling and close mobile menu
+  // Closes desktop dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Smoothly scrolls to a section
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false); // Close menu after clicking a link
+    // Close the main mobile menu when a primary link is clicked
+    setIsMenuOpen(false);
   };
 
-  const logoText = "CodeVerve";
-  const letters = logoText.split("");
+  // --- Handlers for DESKTOP dropdown ---
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); 
+  };
+  
+  const handleClick = () => {
+    setIsDropdownOpen(state => !state);
+  }
 
   return (
-    <nav className={`fixed left-0 right-0 z-50 text-white transition-all duration-700 ${visible ? 'top-5' : '-top-full'}`}>
+    <nav className={`fixed left-0 right-0 z-50 bg-background text-white transition-all duration-700 ${visible ? 'top-5' : '-top-full'}`}>
       <div className="container mx-auto px-10 py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Left */}
-          <div className="flex items-center space-x-2 ml-0 md:ml-12">
-            {/* The SVG has been replaced with this div styled with CSS */}
+          <div className="flex items-center space-x-3 ml-0 md:ml-12">
             <div
               style={{
                 width: '28px',
@@ -54,7 +88,7 @@ const Navigation = () => {
                 <span
                   key={index}
                   className="inline-block opacity-0 animate-fadeInUp"
-                  style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+                  style={{ animationDelay: `${0.1 + index * 0.05}s` }}
                 >
                   {letter}
                 </span>
@@ -62,7 +96,7 @@ const Navigation = () => {
             </span>
           </div>
 
-          {/* Navigation Links - Center */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center justify-center space-x-16 flex-1 mx-4">
             <a href="#" onClick={() => handleScrollTo('home')} className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
               Home
@@ -73,11 +107,26 @@ const Navigation = () => {
             <a href="#projects" onClick={() => handleScrollTo('projects')} className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
               Projects
             </a>
-            <div className="relative group">
-              <button className="text-white/90 hover:text-white transition-colors text-base font-bold flex items-center">
+            <div 
+              className="relative" 
+              ref={dropdownRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button 
+                onClick={handleClick}
+                className="text-white/90 hover:text-white transition-colors text-base font-bold flex items-center"
+              >
                 All Pages
-                <ChevronDown className="ml-1 w-3 h-3 opacity-70" />
+                <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 bg-black/50 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg transition-all duration-300 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                <div className="p-2">
+                  <a href="/pricing" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Pricing</a>
+                  <a href="/blog" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Blog</a>
+                  <a href="/contact" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Contact</a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -103,22 +152,39 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            <a href="#" onClick={() => handleScrollTo('home')} className="block text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+          <div className="md:hidden mt-4 pb-4 space-y-2">
+            <a href="#" onClick={() => handleScrollTo('home')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Home
             </a>
-            <a href="#about" onClick={() => handleScrollTo('about')} className="block text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+            <a href="#about" onClick={() => handleScrollTo('about')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               About
             </a>
-            <a href="#projects" onClick={() => handleScrollTo('projects')} className="block text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+            <a href="#projects" onClick={() => handleScrollTo('projects')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Projects
             </a>
-            <a href="#pages" onClick={() => handleScrollTo('pages')} className="block text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
-              All Pages
-            </a>
-            <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black rounded-full">
-              Contact
-            </Button>
+            {/* --- Mobile Dropdown Section --- */}
+            <div>
+              <button
+                onClick={() => setIsMobileDropdownOpen(prev => !prev)}
+                className="w-full flex justify-between items-center px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer"
+              >
+                <span>All Pages</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {isMobileDropdownOpen && (
+                <div className="pl-8 mt-2 space-y-2">
+                  <a href="/pricing" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Pricing</a>
+                  <a href="/blog" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Blog</a>
+                  <a href="/contact" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Contact</a>
+                </div>
+              )}
+            </div>
+            {/* Contact Button for Mobile */}
+            <div className="px-4 pt-4">
+              <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black rounded-full">
+                Contact
+              </Button>
+            </div>
           </div>
         )}
       </div>
