@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logoImage from "@/assets/1.png"; 
+import logoImage from "@/assets/1.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false); // New state for mobile dropdown
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
-  const dropdownRef = useRef<HTMLDivElement>(null); 
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const brandName = "Webstan";
@@ -59,7 +59,7 @@ const Navigation = () => {
   const handleMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 300); 
+    }, 300);
   };
   
   const handleClick = () => {
@@ -67,7 +67,8 @@ const Navigation = () => {
   }
 
   return (
-    <nav className={`fixed left-0 right-0 z-50 bg-background text-white transition-all duration-700 ${visible ? 'top-5' : '-top-full'}`}>
+    // Removed the bg-background class to make the navbar transparent
+    <nav className={`fixed left-0 right-0 z-50 text-white transition-all duration-700 ${visible ? 'top-5' : '-top-full'}`}>
       <div className="container mx-auto px-10 py-4">
         <div className="flex items-center justify-between">
           {/* Logo - Left */}
@@ -152,7 +153,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-2">
+          <div className="md:hidden mt-4 pb-4 space-y-2 bg-background/80 backdrop-blur-lg rounded-lg">
             <a href="#" onClick={() => handleScrollTo('home')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Home
             </a>
