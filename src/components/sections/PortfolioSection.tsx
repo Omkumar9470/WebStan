@@ -51,16 +51,10 @@ const PortfolioSection = () => {
       title: "Studio Clay",
       year: "© 2022",
       href: "/project/studio-clay"
-    },
-    {
-      image: projectPentaclay,
-      title: "Pentaclay Design Works",
-      year: "© 2025",
-      href: "/project/pentaclay-design-works"
     }
   ];
 
-  const headingText = "Real Work, Real Impact Projects That Made a Difference";
+  const headingText = "Real Work";
   const words = headingText.split(" ");
 
   return (
@@ -79,65 +73,43 @@ const PortfolioSection = () => {
                 </span>
               ))}
             </h2>
-            <p 
-              className={`text-muted-foreground text-lg transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-              style={{ transitionDelay: `${words.length * 0.05 + 0.1}s` }}
-            >
-              WebStan will be collaborating with your team to develop ideas.
-            </p>
           </div>
-          <div 
-            className={`hidden md:block transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ transitionDelay: `${words.length * 0.05 + 0.2}s` }}
-          >
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              View All
-            </Button>
-          </div>
+          
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${project.title === 'Studio Clay' ? 'lg:col-span-2' : ''}`}
               style={{ transitionDelay: `${index * 0.1 + 0.5}s` }}
             >
               <a
                 href={project.href}
-                className="group block space-y-4"
+                className="group block space-y-4 relative"
               >
-                <div className="overflow-hidden rounded-lg">
+                <div className="overflow-hidden rounded-lg relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${project.title === 'Studio Clay' ? 'aspect-video' : 'aspect-square'}`}
                     onError={(e) => { e.currentTarget.src = `https://placehold.co/600x800/1a1a1a/ffffff?text=${project.title.replace(' ', '+')}`; }}
                   />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {project.year}
-                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                    <h3 className="text-lg font-semibold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-white/80 text-sm">
+                      {project.year}
+                    </p>
+                  </div>
                 </div>
               </a>
             </div>
           ))}
         </div>
 
-        <div className="md:hidden mt-12 text-center">
-          <div 
-            className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ transitionDelay: '1s' }}
-          >
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-              View All
-            </Button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

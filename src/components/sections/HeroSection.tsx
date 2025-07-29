@@ -2,7 +2,7 @@ import heroVideo from "@/assets/1.mp4";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
-  const headingText = "Code That Performs. Design That Connects.";
+  const headingText = "We Build Together. Your Digital Legacy.";
   const words = headingText.split(" ");
 
   const initialDelay = 0.5; 
@@ -44,7 +44,7 @@ const HeroSection = () => {
         
         {/* Paragraph */}
         <p 
-          className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto opacity-0 animate-fadeInUp"
+          className="text-xl md:text-xl text-white/80 max-w-3xl mx-auto opacity-0 animate-fadeInUp"
           style={{ animationDelay: `${paragraphDelay}s` }}
         >
           Transforming Ideas into Intelligent Digital Experiences.
@@ -56,7 +56,7 @@ const HeroSection = () => {
           style={{ animationDelay: `${paragraphDelay + 0.2}s` }}
         >
           <Button size="lg" className="bg-yellow-400 text-black font-bold hover:bg-yellow-500 rounded-lg px-8 py-3 text-base">
-            Get Started
+            Book A Meeting
           </Button>
         </div>
       </div>
