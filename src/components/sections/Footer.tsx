@@ -29,7 +29,7 @@ const Footer = () => {
                 }}
                 aria-label="Company Logo"
               ></div>
-              <span className="text-2xl font-bold">CodeVerve</span>
+              <span className="text-2xl font-bold">WebStan</span>
             </div>
             <p className="text-muted-foreground max-w-sm">
               We are a strategic & creative digital agency who are focused on UX, mobile, social, data gathering and promotional offerings.
