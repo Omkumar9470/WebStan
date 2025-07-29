@@ -46,7 +46,7 @@ const AboutSection = () => {
 
   return (
     // Added id="about" to make this section linkable
-    <section id="about" className="py-20 bg-section-bg overflow-hidden">
+    <section id="about" className="py-20 bg-black overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           

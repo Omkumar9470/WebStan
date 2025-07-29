@@ -7,17 +7,18 @@ import TestimonialSection from "@/components/sections/TestimonialSection";
 import BlogSection from "@/components/sections/BlogSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
+import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
       <PortfolioSection />
+      <ServicesSection />
       <TestimonialSection />
-      <BlogSection />
+      <AboutSection />
+      <FAQSection />
       <CTASection />
       <Footer />
     </div>

@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-image.jpg";
+import heroVideo from "@/assets/1.mp4";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -11,16 +11,23 @@ const HeroSection = () => {
 
   return (
     // The main section now has the background image applied.
-    <section 
+    <section
       id="home" // Added ID for navbar scrolling
-      className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white text-center"
-      style={{ backgroundImage: `url(${heroImage})` }}
+      className="relative min-h-screen flex items-center justify-center text-white text-center overflow-hidden"
     >
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
       {/* This div creates a dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       {/* This div holds the centered content, positioned above the overlay */}
-      <div className="relative z-10 container mx-auto px-6 space-y-8">
+      <div className="relative z-20 container mx-auto px-6 space-y-8">
         
         {/* Heading */}
         <h1 className="text-5xl md:text-7xl font-bold leading-tight">

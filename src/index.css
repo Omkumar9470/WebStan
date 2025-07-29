@@ -9,10 +9,10 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Vinency dark theme design system */
-    --background: 222 22% 8%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
-    --card: 222 22% 10%;
+    --card: 0 0% 0%;
     --card-foreground: 0 0% 100%;
 
     --popover: 222 22% 10%;
@@ -43,14 +43,14 @@ All colors MUST be HSL.
     --hero-accent: 42 96% 58%;
     --hero-text: 0 0% 100%;
     --stats-bg: 222 22% 12%;
-    --section-bg: 222 22% 10%;
+    --section-bg: 0 0% 0%;
   }
 
   .dark {
-    --background: 222 22% 8%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
-    --card: 222 22% 10%;
+    --card: 0 0% 0%;
     --card-foreground: 0 0% 100%;
 
     --popover: 222 22% 10%;
