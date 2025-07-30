@@ -1,42 +1,99 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useState, useEffect, useRef } from 'react';
 
 const faqs = [
   {
-    question: "What is WebStan?",
-    answer: "WebStan is a cutting-edge web development agency that specializes in creating high-performance websites and applications.",
+    question: "How Does TIC Global Services Work?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "How can I get started with WebStan?",
-    answer: "You can get started by contacting us through our website. We will schedule a consultation to discuss your project and provide you with a quote.",
+    question: "What Services do TIC Global services Offer?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What technologies do you use?",
-    answer: "We use a variety of modern technologies, including React, Next.js, and Node.js, to build fast, scalable, and secure web applications.",
+    question: "What's the average project duration in TIC Global Services?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "Do you offer design services?",
-    answer: "Yes, we offer a full range of design services, including UI/UX design, branding, and graphic design.",
+    question: "Is an advance payment required before starting a project?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    question: "What is your pricing model?",
-    answer: "We offer flexible pricing models to suit your needs. We can work on an hourly basis or provide a fixed-price quote for your project.",
+    question: "Do you offer refunds?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
-export default function FAQSection() {
+const FAQSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  const headingText = "Frequently Asked Question";
+  const headingWords = headingText.split(" ");
+
   return (
-    <section id="faq" className="py-20 bg-background text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-        <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <AccordionItem value={`item-${index}`} key={index}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+    <section ref={sectionRef} className="py-24 sm:py-32">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-left">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white mt-8">
+            {headingWords.map((word, index) => (
+              <span
+                key={index}
+                className={`inline-block mr-2 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: `${index * 0.15}s` }}
+              >
+                {word}
+              </span>
+            ))}
+          </h1>
+        </div>
+        <div className="mt-8 w-full max-w-7xl">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <div
+                key={faq.question}
+                className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: `${(headingWords.length * 0.1) + index * 0.3}s` }}
+              >
+                <AccordionItem value={faq.question}>
+                  <AccordionTrigger>
+                    <h2>{faq.question}</h2>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <h3>{faq.answer}</h3>
+                  </AccordionContent>
+                </AccordionItem>
+              </div>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default FAQSection;
