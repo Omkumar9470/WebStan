@@ -37,7 +37,7 @@ const ServicesSection = () => {
           <div className="overflow-hidden rounded-lg">
             <div
               className="w-full h-[60vh] bg-cover bg-center group-hover:scale-105 transition-transform duration-[500ms]"
-              style={{ backgroundImage: "url('/src/assets/Branding.jpg')" }}>
+              style={{ backgroundImage: "url('https://res.cloudinary.com/dpsmum8qz/image/upload/v1753873515/Branding_hcazkd.jpg')" }}>
             </div>
           </div>
 
