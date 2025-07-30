@@ -58,7 +58,7 @@ const PortfolioSection = () => {
   const words = headingText.split(" ");
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20 bg-section-bg text-white">
+    <section ref={sectionRef} id="projects" className="pt-20 bg-section-bg text-white">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
           <div className="max-w-2xl">
