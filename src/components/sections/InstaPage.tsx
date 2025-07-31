@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import instaImage from '@/assets/cta image.png';
+import instaImage from '@/assets/Insta image.jpg';
 import { Button } from "@/components/ui/button";
 
-const CTASection = () => {
+const InstaPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +30,7 @@ const CTASection = () => {
     };
   }, []);
 
-  const headingText = "Let’s Build Something Exceptional Together.";
+  const headingText = "Follow us on Instagram";
   const headingWords = headingText.split(" ");
 
   const headingDuration = headingWords.length * 0.1;
@@ -61,7 +61,7 @@ const CTASection = () => {
             style={{ transitionDelay: `${buttonStartDelay}s` }}
           >
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Let's Talk
+              Follow Us
             </Button>
           </div>
         </div>
@@ -70,4 +70,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection;
+export default InstaPage;

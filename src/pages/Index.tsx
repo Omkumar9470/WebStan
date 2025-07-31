@@ -8,6 +8,7 @@ import BlogSection from "@/components/sections/BlogSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 import FAQSection from "@/components/sections/FAQSection";
+import InstaPage from "@/components/sections/InstaPage";
 
 const Index = () => {
   return (
@@ -17,7 +18,14 @@ const Index = () => {
       <PortfolioSection />
       <ServicesSection />
       <FAQSection />
-      <CTASection />
+      <div className="flex flex-col md:flex-row items-stretch md:h-[600px]">
+        <div className="w-full md:w-1/2 p-4 h-[600px] md:h-full">
+          <CTASection />
+        </div>
+        <div className="w-full md:w-1/2 p-4 h-[600px] md:h-full">
+          <InstaPage />
+        </div>
+      </div>
       <Footer />
     </div>
   );

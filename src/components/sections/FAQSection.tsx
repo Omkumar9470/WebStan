@@ -24,9 +24,9 @@ const faqs = [
   },
 ];
 
-const FAQSection = () => {
+const AnimatedAccordionItem = ({ faq, index }: { faq: { question: string, answer: string }, index: number }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const itemRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,6 +34,52 @@ const FAQSection = () => {
         const [entry] = entries;
         if (entry.isIntersecting) {
           setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const currentRef = itemRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={itemRef}
+      className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+      style={{ transitionDelay: `${index * 0.1}s` }}
+    >
+      <AccordionItem value={faq.question}>
+        <AccordionTrigger>
+          <h2>{faq.question}</h2>
+        </AccordionTrigger>
+        <AccordionContent>
+          <h3>{faq.answer}</h3>
+        </AccordionContent>
+      </AccordionItem>
+    </div>
+  );
+};
+
+const FAQSection = () => {
+  const [isHeadingVisible, setHeadingVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setHeadingVisible(true);
           observer.unobserve(entry.target);
         }
       },
@@ -63,7 +109,7 @@ const FAQSection = () => {
             {headingWords.map((word, index) => (
               <span
                 key={index}
-                className={`inline-block mr-2 transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                className={`inline-block mr-2 transition-all duration-500 ease-out ${isHeadingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 {word}
@@ -74,20 +120,7 @@ const FAQSection = () => {
         <div className="mt-8 w-full max-w-7xl">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <div
-                key={faq.question}
-                className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: `${(headingWords.length * 0.1) + index * 0.3}s` }}
-              >
-                <AccordionItem value={faq.question}>
-                  <AccordionTrigger>
-                    <h2>{faq.question}</h2>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <h3>{faq.answer}</h3>
-                  </AccordionContent>
-                </AccordionItem>
-              </div>
+              <AnimatedAccordionItem key={faq.question} faq={faq} index={index} />
             ))}
           </Accordion>
         </div>
