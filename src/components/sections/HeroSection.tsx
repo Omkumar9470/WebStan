@@ -1,4 +1,3 @@
-import heroVideo from "@/assets/1.mp4";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -21,7 +20,7 @@ const HeroSection = () => {
         muted
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src={heroVideo} type="video/mp4" />
+        <source src="https://res.cloudinary.com/dpsmum8qz/video/upload/v1754316250/1_idm5ie.mp4" type="video/mp4" />
       </video>
       {/* This div creates a dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/60 z-10"></div>

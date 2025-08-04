@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import aboutImage from "@/assets/2.jpg";
 
 const AboutSection = () => {
   // State to track if the elements are visible on screen
@@ -107,7 +106,7 @@ const AboutSection = () => {
           <div ref={imageRef}>
             {/* The image slides up from the bottom */}
             <img
-              src={aboutImage}
+              src={'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754321605/2_kzin9f.jpg'}
               alt="Our team at work"
               className={`w-full h-auto object-cover rounded-lg transition-all duration-1000 ease-out ${isImageVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
               style={{ transitionDelay: '0.2s' }} // Added delay to image animation
