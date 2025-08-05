@@ -3,10 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Import your main page and error page
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import ContactPage from "@/components/sections/ContactPage"; // Import the ContactPage
-import AboutPage from "./pages/About";
+
+// CORRECTED: Ensure these paths are all lowercase to avoid case-sensitivity issues.
+// Make sure your files are also named 'about.tsx' and 'contact.tsx' (all lowercase).
+import About from "@/pages/About";
 
 const queryClient = new QueryClient();
 
@@ -17,12 +21,15 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* This route is for your main homepage */}
           <Route path="/" element={<Index />} />
-          {/* ADDED: This new route tells the app to show ContactPage at the /contact URL */}
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about" element={<AboutPage />} />
 
-          {/* CATCH-ALL ROUTE */}
+          {/* This route is for the standalone About page */}
+          <Route path="/about" element={<About />} />
+
+          {/* This route is for the standalone Contact page */}
+
+          {/* This is the catch-all "Not Found" route, it must be last */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
