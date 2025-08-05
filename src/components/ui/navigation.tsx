@@ -99,13 +99,13 @@ const Navigation = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center justify-center space-x-16 flex-1 mx-4">
-            <a href="" onClick={() => handleScrollTo('home')} className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
+            <a href="/" className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
               Home
             </a>
-            <a href="#projects" onClick={() => handleScrollTo('projects')} className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
+            <a href="/#projects" onClick={() => handleScrollTo('projects')} className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
               Projects
             </a>
-            <a href="#about" onClick={() => handleScrollTo('about')} className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
+            <a href="/about" className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
               About
             </a>
             <div 
