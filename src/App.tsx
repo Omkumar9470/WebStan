@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // CORRECTED: The import path now matches the actual filename's capitalization.
-// This assumes your files are named 'About.tsx' and 'Contact.tsx'.
+// This assumes your file is named 'About.tsx'.
 import AboutPage from "@/pages/About.tsx"; 
 
 const queryClient = new QueryClient();
