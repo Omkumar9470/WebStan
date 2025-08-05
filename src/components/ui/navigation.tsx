@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logoImage from "@/assets/1.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,7 +76,7 @@ const Navigation = () => {
               style={{
                 width: '28px',
                 height: '28px',
-                backgroundImage: `url(${logoImage})`,
+                backgroundImage: `url(https://res.cloudinary.com/dpsmum8qz/image/upload/v1754405046/1_ktvgid.png)`,
                 backgroundSize: 'contain',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
