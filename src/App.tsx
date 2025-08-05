@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ContactPage from "@/components/sections/ContactPage"; // Import the ContactPage
-import AboutPage from "./pages/aboutpage";
+import AboutPage from "./pages/About";
 
 const queryClient = new QueryClient();
 
