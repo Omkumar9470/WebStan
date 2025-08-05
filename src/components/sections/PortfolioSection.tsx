@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import projectZ3 from "@/assets/project-z3.jpg";
 import projectVinency from "@/assets/project-vinency.jpg";
 import projectStudioClay from "@/assets/project-studio-clay.jpg";
 import projectPentaclay from "@/assets/project-pentaclay.jpg";
@@ -32,19 +31,20 @@ const PortfolioSection = () => {
       }
     };
   }, []);
+  
 
   const projects = [
     {
-      image: projectZ3,
-      title: "Z3 Branding & Website",
-      year: "© 2024",
-      href: "/project/z3-branding-website"
+      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg",
+      title: "KalaKriti Shopping App",
+      year: "© 2025",
+      href: "https://preview--rang-de-desi-vibe.lovable.app/"
     },
     {
-      image: projectVinency,
-      title: "Vinency Website",
-      year: "© 2023",
-      href: "/project/vinency-website"
+      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754409506/Project_2_emj1ww.jpg",
+      title: "Luxe Home",
+      year: "© 2025",
+      href: "https://preview--re-furnished-frontend.lovable.app/"
     },
     {
       image: projectStudioClay,
