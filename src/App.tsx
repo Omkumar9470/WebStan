@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 // CORRECTED: The import path now matches the actual filename's capitalization.
 // This assumes your file is named 'About.tsx'.
 import AboutPage from "@/pages/About.tsx"; 
+import Blog from "@/pages/Blog.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,9 @@ const App = () => (
 
           {/* This route is for the standalone About page */}
           <Route path="/about" element={<AboutPage />} />
+
+          {/* This route is for the standalone Blog page */}
+          <Route path="/blog" element={<Blog />} />
 
           {/* This is the catch-all "Not Found" route, it must be last */}
           <Route path="*" element={<NotFound />} />

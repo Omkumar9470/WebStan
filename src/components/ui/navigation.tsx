@@ -158,11 +158,11 @@ const Navigation = () => {
             <a href="#" onClick={() => handleScrollTo('home')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Home
             </a>
-            <a href="#about" onClick={() => handleScrollTo('about')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
-              About
-            </a>
             <a href="#projects" onClick={() => handleScrollTo('projects')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Projects
+            </a>
+            <a href="#about" onClick={() => handleScrollTo('about')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+              About
             </a>
             {/* --- Mobile Dropdown Section --- */}
             <div>
