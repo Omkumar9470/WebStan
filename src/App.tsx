@@ -8,9 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-// CORRECTED: Ensure these paths are all lowercase to avoid case-sensitivity issues.
-// Make sure your files are also named 'about.tsx' and 'contact.tsx' (all lowercase).
-import About from "@/pages/About";
+// CORRECTED: The import path now matches the actual filename's capitalization.
+// This assumes your files are named 'About.tsx' and 'Contact.tsx'.
+import AboutPage from "@/pages/About.tsx"; 
 
 const queryClient = new QueryClient();
 
@@ -25,9 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* This route is for the standalone About page */}
-          <Route path="/about" element={<About />} />
-
-          {/* This route is for the standalone Contact page */}
+          <Route path="/about" element={<AboutPage />} />
 
           {/* This is the catch-all "Not Found" route, it must be last */}
           <Route path="*" element={<NotFound />} />
