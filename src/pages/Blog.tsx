@@ -64,7 +64,7 @@ const Blog = () => {
   const paragraphDelay = (headingWords.length * 0.08) + 0.2;
 
   return (
-    <section ref={sectionRef} className="py-20 bg-section-bg overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-section-bg overflow-hidden mt-20">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-end mb-16">
           <div>

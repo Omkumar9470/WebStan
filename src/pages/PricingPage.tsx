@@ -72,7 +72,7 @@ const PricingPage = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-background overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-background overflow-hidden mt-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold text-foreground mb-4 transition-all duration-500 ease-out ${isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>

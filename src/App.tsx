@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Import your main page and error page
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout"; // Add this import
 
 // CORRECTED: The import path now matches the actual filename's capitalization.
 // This assumes your file is named 'About.tsx'.
@@ -24,23 +25,25 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* This route is for your main homepage */}
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Layout />}>
+            {/* This route is for your main homepage */}
+            <Route index element={<Index />} />
 
-          {/* This route is for the standalone About page */}
-          <Route path="/about" element={<AboutPage />} />
+            {/* This route is for the standalone About page */}
+            <Route path="/about" element={<AboutPage />} />
 
-          {/* This route is for the standalone Blog page */}
-          <Route path="/blog" element={<Blog />} />
+            {/* This route is for the standalone Blog page */}
+            <Route path="/blog" element={<Blog />} />
 
-          {/* This route is for the standalone Pricing page */}
-          <Route path="/pricing" element={<PricingPage />} />
+            {/* This route is for the standalone Pricing page */}
+            <Route path="/pricing" element={<PricingPage />} />
 
-          {/* This route is for the standalone Branding page */}
-          <Route path="/branding" element={<BrandingPage />} />
+            {/* This route is for the standalone Branding page */}
+            <Route path="/branding" element={<BrandingPage />} />
 
-          {/* This is the catch-all "Not Found" route, it must be last */}
-          <Route path="*" element={<NotFound />} />
+            {/* This is the catch-all "Not Found" route, it must be last */}
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

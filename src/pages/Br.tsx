@@ -62,7 +62,7 @@ const BrandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-background text-foreground">
+    <div className="bg-background text-foreground mt-20">
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 -z-10" />
 
       {/* Dynamic Sections */}
