@@ -124,7 +124,6 @@ const Navigation = () => {
                 <div className="p-2">
                   <Link to="/pricing" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Pricing</Link>
                   <Link to="/blog" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Blog</Link>
-                  <Link to="/contact" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Contact</Link>
                 </div>
               </div>
             </div>
@@ -132,11 +131,7 @@ const Navigation = () => {
 
           {/* Contact Button - Right (Hidden on mobile) */}
           <div className="hidden md:block pr-4">
-            <Link to="/contact">
-              <Button className="bg-transparent border border-white text-white hover:bg-white hover:text-black rounded-half px-6">
-                Contact
-              </Button>
-            </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -177,17 +172,12 @@ const Navigation = () => {
                 <div className="pl-8 mt-2 space-y-2">
                   <Link to="/pricing" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Pricing</Link>
                   <Link to="/blog" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Blog</Link>
-                  <Link to="/contact" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Contact</Link>
                 </div>
               )}
             </div>
             {/* Contact Button for Mobile */}
             <div className="px-4 pt-4">
-              <Link to="/contact" className="w-full">
-                <Button className="w-full bg-transparent border border-white text-white hover:bg-white hover:text-black rounded-full">
-                  Contact
-                </Button>
-              </Link>
+
             </div>
           </div>
         )}

@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import AboutPage from "@/pages/About.tsx"; 
 import Blog from "@/pages/Blog.tsx";
 import PricingPage from "@/pages/PricingPage.tsx"; // Add this import
+import BrandingPage from "@/pages/Br.tsx"; // Add this import
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,9 @@ const App = () => (
 
           {/* This route is for the standalone Pricing page */}
           <Route path="/pricing" element={<PricingPage />} />
+
+          {/* This route is for the standalone Branding page */}
+          <Route path="/branding" element={<BrandingPage />} />
 
           {/* This is the catch-all "Not Found" route, it must be last */}
           <Route path="*" element={<NotFound />} />

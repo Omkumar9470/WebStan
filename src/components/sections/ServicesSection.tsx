@@ -60,7 +60,7 @@ const ServicesSection = () => {
           </div>
 
           <div className="absolute bottom-4 right-4 z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-[700ms]">
-            <a href="/service/content-writing">
+            <a href="/branding">
               <Button
                 variant="outline"
                 className="border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground px-6 py-3 text-lg"

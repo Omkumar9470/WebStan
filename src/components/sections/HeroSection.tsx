@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const headingText = "We Build Together. Your Digital Legacy.";
@@ -54,9 +55,11 @@ const HeroSection = () => {
           className="pt-4 opacity-0 animate-fadeInUp"
           style={{ animationDelay: `${paragraphDelay + 0.2}s` }}
         >
-          <Button size="lg" className="bg-yellow-400 text-black font-bold hover:bg-yellow-500 rounded-lg px-8 py-3 text-base">
-            Book A Meeting
-          </Button>
+          <Link to="/pricing">
+            <Button size="lg" className="bg-yellow-400 text-black font-bold hover:bg-yellow-500 rounded-lg px-8 py-3 text-base">
+              Book A Meeting
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
