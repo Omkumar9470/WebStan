@@ -158,15 +158,15 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2 bg-background/80 backdrop-blur-lg rounded-lg">
-            <a href="#" onClick={() => handleScrollTo('home')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+            <a href="/" className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Home
             </a>
-            <a href="#projects" onClick={() => handleScrollTo('projects')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+            <a href="/#projects" onClick={() => handleScrollTo('projects')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               Projects
             </a>
-            <a href="#about" onClick={() => handleScrollTo('about')} className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
+            <Link to="/about" className="block px-4 py-2 text-white hover:text-yellow-400 transition-colors text-base cursor-pointer">
               About
-            </a>
+            </Link>
             {/* --- Mobile Dropdown Section --- */}
             <div>
               <button
