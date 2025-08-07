@@ -1,9 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
-import { Button } from "@/components/ui/button";
+import { PopupButton } from "react-calendly";
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [rootElem, setRootElem] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setRootElem(document.getElementById("root"));
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,9 +64,12 @@ const CTASection = () => {
             className={`flex justify-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             style={{ transitionDelay: `${buttonStartDelay}s` }}
           >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Let's Talk
-            </Button>
+            <PopupButton
+                url="https://calendly.com/shubhamsahu5122333/30min"
+                rootElement={rootElem}
+                text="Let's Talk"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-8 py-3 text-base"
+            />
           </div>
         </div>
       </div>
