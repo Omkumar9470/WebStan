@@ -167,30 +167,6 @@ const AboutPage = () => {
                   something that lasts.
                 </p>
               </div>
-
-              <div
-                className={`transition-all duration-500 ease-out ${isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: '1.0s' }}
-              >
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                  Experience and Expertise
-                </h3>
-                <p className="text-foreground text-lg">
-                  Delivering High-Precision Digital Solutions with Proven Technical Expertise.
-                </p>
-              </div>
-
-              <div
-                className={`transition-all duration-500 ease-out ${isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                style={{ transitionDelay: '0.6s' }} // Increased delay for second paragraph
-              >
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                  Customized Solution
-                </h3>
-                <p className="text-foreground text-lg">
-                  Our custom-built solutions are engineered to match your vision, workflow, and growth strategy.
-                </p>
-              </div>
             </div>
 
           </div>
