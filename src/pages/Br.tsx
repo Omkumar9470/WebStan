@@ -2,33 +2,27 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const sections = [
   {
-    id: 'photoshoot',
-    title: 'Photoshoot',
-    description: 'Capturing your brand\'s essence through professional photography that tells a story and engages your audience.',
+    id: 'Brand Product Shoots',
+    title: 'Brand Product Shoots',
+    description: 'Showcase your products in their best light with professional photography that captures detail, emotion, and your brand’s unique personality — creating visuals that connect with your audience.',
     imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
   },
   {
-    id: 'branding',
-    title: 'Branding',
-    description: 'Developing a strong, cohesive brand identity that resonates with your target market and sets you apart from the competition.',
+    id: 'Web Branding & Brand Identity',
+    title: 'Web Branding & Brand Identity',
+    description: 'Craft a distinct and memorable brand image through thoughtful design, consistent visuals, and strategic storytelling that sets you apart in the digital space.',
     imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
   },
   {
-    id: 'logo',
-    title: 'Logo Design',
-    description: 'Creating a unique and memorable logo that perfectly represents your brand\'s values and vision.',
+    id: 'Digital Marketing Services',
+    title: 'Digital Marketing Services',
+    description: 'Boost your reach with targeted strategies in SEO, social media, PPC, and content marketing — driving visibility, engagement, and meaningful conversions.',
     imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
   },
   {
-    id: 'design',
-    title: 'Graphic Design',
-    description: 'From web to print, we deliver stunning visuals that communicate your message effectively and elevate your brand aesthetic.',
-    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
-  },
-  {
-    id: 'digital-marketing',
-    title: 'Digital Marketing',
-    description: 'Driving growth through strategic online marketing campaigns, including SEO, social media, and content strategy.',
+    id: 'UI/UX Design',
+    title: 'UI/UX Design',
+    description: 'Design seamless, intuitive digital experiences that not only look stunning but also make every interaction effortless and enjoyable for your users.',
     imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
   },
 ];
