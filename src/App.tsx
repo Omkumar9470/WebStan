@@ -13,7 +13,6 @@ import Layout from "./components/Layout"; // Add this import
 // This assumes your file is named 'About.tsx'.
 import AboutPage from "@/pages/About.tsx"; 
 import Blog from "@/pages/Blog.tsx";
-import PricingPage from "@/pages/PricingPage.tsx"; // Add this import
 import BrandingPage from "@/pages/Br.tsx"; // Add this import
 
 const queryClient = new QueryClient();
@@ -34,9 +33,6 @@ const App = () => (
 
             {/* This route is for the standalone Blog page */}
             <Route path="/blog" element={<Blog />} />
-
-            {/* This route is for the standalone Pricing page */}
-            <Route path="/pricing" element={<PricingPage />} />
 
             {/* This route is for the standalone Branding page */}
             <Route path="/branding" element={<BrandingPage />} />

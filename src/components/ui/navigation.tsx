@@ -122,7 +122,6 @@ const Navigation = () => {
               </button>
               <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 bg-black/50 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg transition-all duration-300 ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                 <div className="p-2">
-                  <Link to="/pricing" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Pricing</Link>
                   <Link to="/blog" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Blog</Link>
                   <Link to="/branding" className="block px-4 py-2 text-sm text-white/80 hover:bg-white/10 hover:text-white rounded-md">Branding</Link>
                 </div>
@@ -132,12 +131,12 @@ const Navigation = () => {
 
           {/* Contact Button - Right (Hidden on mobile) */}
           <div className="hidden md:block pr-4">
-            <Link to="/pricing">
+            <Link to="/contact">
               <Button
                 variant="outline"
                 className="border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground px-6 py-3 text-lg"
               >
-                Pricing
+                Contact
               </Button>
             </Link>
           </div>
@@ -178,7 +177,6 @@ const Navigation = () => {
               </button>
               {isMobileDropdownOpen && (
                 <div className="pl-8 mt-2 space-y-2">
-                  <Link to="/pricing" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Pricing</Link>
                   <Link to="/blog" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Blog</Link>
                   <Link to="/branding" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Branding</Link>
                 </div>
@@ -186,12 +184,12 @@ const Navigation = () => {
             </div>
             {/* Contact Button for Mobile */}
             <div className="px-4 pt-4">
-              <Link to="/pricing" className="block w-full">
+              <Link to="/contact" className="block w-full">
                 <Button
                   variant="outline"
                   className="w-full border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground"
                 >
-                  Pricing
+                  Contact
                 </Button>
               </Link>
             </div>
