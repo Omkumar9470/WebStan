@@ -14,6 +14,7 @@ import Layout from "./components/Layout"; // Add this import
 import AboutPage from "@/pages/About.tsx"; 
 import Blog from "@/pages/Blog.tsx";
 import BrandingPage from "@/pages/Br.tsx"; // Add this import
+import Blog1 from "@/components/Blogs/Blog1.tsx";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,9 @@ const App = () => (
 
             {/* This route is for the standalone Blog page */}
             <Route path="/blog" element={<Blog />} />
+
+            {/* This route is for the standalone Branding page */}
+            <Route path="/blog/blog1" element={<Blog1 />} />
 
             {/* This route is for the standalone Branding page */}
             <Route path="/branding" element={<BrandingPage />} />

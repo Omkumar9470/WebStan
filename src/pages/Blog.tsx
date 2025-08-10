@@ -34,10 +34,16 @@ const Blog = () => {
 
   const blogPosts = [
     {
+      title: "This is Blog Post 1",
+      description: "This is the first blog post. The content is engaging and informative.",
+      date: "Oct 10, 2024",
+      href: "/blog/blog1"
+    },
+    {
       title: "Crafting Memorable Identities for Businesses",
       description: "Delve into the art and science of branding, and learn how our studio helps businesses.",
       date: "Sep 8, 2014",
-      href: "/blog/crafting-memorable-identities-for-businesses"
+      href: "/blog/"
     },
     {
       title: "Creating Memorable Brand Experiences",
