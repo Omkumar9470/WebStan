@@ -35,19 +35,19 @@ const PortfolioSection = () => {
 
   const projects = [
     {
-      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg",
+      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754842040/Gemini_Generated_Image_rcj55ercj55ercj51_zgo2zr.png",
       title: "KalaKriti Shopping App",
       year: "© 2025",
       href: "https://preview--rang-de-desi-vibe.lovable.app/"
     },
     {
-      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754409506/Project_2_emj1ww.jpg",
+      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754841633/Gemini_Generated_Image_f82c9zf82c9zf82c1_pkpr2l.png",
       title: "Luxe Home",
       year: "© 2025",
       href: "https://preview--re-furnished-frontend.lovable.app/"
     },
     {
-      image: projectStudioClay,
+      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754842660/Gemini_Generated_Image_qd3wbsqd3wbsqd3w1_bpmcma.png",
       title: "Studio Clay",
       year: "© 2022",
       href: "/project/studio-clay"
