@@ -34,34 +34,10 @@ const Blog = () => {
 
   const blogPosts = [
     {
-      title: "This is Blog Post 1",
-      description: "This is the first blog post. The content is engaging and informative.",
-      date: "Oct 10, 2024",
+      title: "The Growing Importance of a Strong Online Presence for Businesses",
+      description: "In today’s fast-moving digital world, a strong online presence is no longer optional. It has become a key factor in how businesses attract customers, build trust, and compete in their industry.",
+      date: "Aug 11, 2025",
       href: "/blog/blog1"
-    },
-    {
-      title: "Crafting Memorable Identities for Businesses",
-      description: "Delve into the art and science of branding, and learn how our studio helps businesses.",
-      date: "Sep 8, 2014",
-      href: "/blog/"
-    },
-    {
-      title: "Creating Memorable Brand Experiences",
-      description: "Discover the secrets behind designing impactful brand experiences that resonate with audience.",
-      date: "May 8, 2023",
-      href: "/blog/creating-memorable-brand-experiences"
-    },
-    {
-      title: "Innovative Design Trends to Watch in [2023]",
-      description: "Stay ahead of the curve with a glimpse into emerging design trends and technologies.",
-      date: "Jul 8, 2019",
-      href: "/blog/innovative-design-trends-to-watch-in-2023"
-    },
-    {
-      title: "Exploring the Psychology Behind Design Choices",
-      description: "Uncover the psychology behind color choices in design and learn how strategic color selection.",
-      date: "Feb 8, 2020",
-      href: "/blog/exploring-the-psychology-behind-design-choices"
     }
   ];
 
@@ -92,9 +68,6 @@ const Blog = () => {
               Stay Ahead with Expert Thoughts on Tech, Design, and Digital Trends.
             </p>
           </div>
-          <Button variant="outline" className="hidden md:block border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            See All
-          </Button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -124,12 +97,6 @@ const Blog = () => {
               </a>
             </div>
           ))}
-        </div>
-
-        <div className="md:hidden mt-8 text-center">
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            See All
-          </Button>
         </div>
       </div>
     </section>
