@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
-import projectVinency from "@/assets/project-vinency.jpg";
-import projectStudioClay from "@/assets/project-studio-clay.jpg";
-import projectPentaclay from "@/assets/project-pentaclay.jpg";
 
 const PortfolioSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,12 +42,6 @@ const PortfolioSection = () => {
       title: "Luxe Home",
       year: "© 2025",
       href: "https://preview--re-furnished-frontend.lovable.app/"
-    },
-    {
-      image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754842660/Gemini_Generated_Image_qd3wbsqd3wbsqd3w1_bpmcma.png",
-      title: "Studio Clay",
-      year: "© 2022",
-      href: "/project/studio-clay"
     }
   ];
 
@@ -81,7 +72,7 @@ const PortfolioSection = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${project.title === 'Studio Clay' ? 'lg:col-span-2' : ''}`}
+              className={`transition-all duration-500 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${index * 0.1 + 0.5}s` }}
             >
               <a
@@ -92,7 +83,7 @@ const PortfolioSection = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 ${project.title === 'Studio Clay' ? 'aspect-video' : 'aspect-square'}`}
+                    className={`w-full object-cover group-hover:scale-105 transition-transform duration-300 aspect-square`}
                     onError={(e) => { e.currentTarget.src = `https://placehold.co/600x800/1a1a1a/ffffff?text=${project.title.replace(' ', '+')}`; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
