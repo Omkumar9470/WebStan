@@ -44,7 +44,7 @@ const CTASection = () => {
     <section 
       ref={sectionRef} 
       className={`relative py-40 bg-cover bg-center bg-no-repeat text-white overflow-hidden rounded-lg transition-all duration-700 ease-out hover:scale-105 h-full ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}`}
-      style={{ backgroundImage: `url('https://res.cloudinary.com/dpsmum8qz/image/upload/v1754317152/cta_image_uxlwtx.jpg')` }}
+      style={{ backgroundImage: `url('https://res.cloudinary.com/dpsmum8qz/image/upload/v1754825205/ChatGPT_Image_Aug_10_2025_04_56_31_PM_co874d.png')` }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative container mx-auto px-6">

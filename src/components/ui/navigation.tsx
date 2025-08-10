@@ -97,7 +97,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center justify-center space-x-16 flex-1 mx-4">
+          <div className="hidden md:flex items-center justify-end space-x-16 mx-4">
             <a href="/" className="text-white/90 hover:text-white transition-colors text-base font-bold cursor-pointer">
               Home
             </a>
@@ -127,18 +127,6 @@ const Navigation = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact Button - Right (Hidden on mobile) */}
-          <div className="hidden md:block pr-4">
-            <Link to="/contact">
-              <Button
-                variant="outline"
-                className="border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground px-6 py-3 text-lg"
-              >
-                Contact
-              </Button>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -181,17 +169,6 @@ const Navigation = () => {
                   <Link to="/branding" className="block px-4 py-2 text-white/80 hover:text-yellow-400 transition-colors text-base">Branding</Link>
                 </div>
               )}
-            </div>
-            {/* Contact Button for Mobile */}
-            <div className="px-4 pt-4">
-              <Link to="/contact" className="block w-full">
-                <Button
-                  variant="outline"
-                  className="w-full border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground"
-                >
-                  Contact
-                </Button>
-              </Link>
             </div>
           </div>
         )}
