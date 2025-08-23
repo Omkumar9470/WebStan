@@ -33,15 +33,15 @@ const PortfolioSection = () => {
   const projects = [
     {
       image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754842040/Gemini_Generated_Image_rcj55ercj55ercj51_zgo2zr.png",
-      title: "KalaKriti Shopping App",
+      title: "KalaKriti",
       year: "© 2025",
-      href: "https://preview--rang-de-desi-vibe.lovable.app/"
+      href: "https://glided-folk.vercel.app/"
     },
     {
       image: "https://res.cloudinary.com/dpsmum8qz/image/upload/v1754841633/Gemini_Generated_Image_f82c9zf82c9zf82c1_pkpr2l.png",
       title: "Luxe Home",
       year: "© 2025",
-      href: "https://preview--re-furnished-frontend.lovable.app/"
+      href: "https://ez-woods.vercel.app/"
     }
   ];
 
