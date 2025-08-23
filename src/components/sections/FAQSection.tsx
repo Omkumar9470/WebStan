@@ -32,7 +32,7 @@ const faqs: { question: string; answer: ReactNode }[] = [
   },
   {
     question: "Do you offer refunds?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    answer: "We don’t offer refunds, except in rare cases where the issue is from our side, and we’ll make it right.",
   },
   {
     question: "What happens if I miss a payment deadline?",
