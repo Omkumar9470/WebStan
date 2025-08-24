@@ -59,7 +59,11 @@ const InstaPage = () => {
             className={`flex justify-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             style={{ transitionDelay: `${buttonStartDelay}s` }}
           >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              onClick={() => window.open('https://www.instagram.com/webstan_', '_blank')}
+            >
               Follow Us
             </Button>
           </div>

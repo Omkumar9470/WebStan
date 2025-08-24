@@ -4,26 +4,26 @@ const sections = [
   {
     id: 'Brand Product Shoots',
     title: 'Brand Product Shoots',
-    description: 'Showcase your products in their best light with professional photography that captures detail, emotion, and your brand’s unique personality — creating visuals that connect with your audience.',
-    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
+    description: 'Showcase your products in their best light with professional photography that captures detail, emotion, and your brand’s unique personality creating visuals that connect with your audience.',
+    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1756043335/br1_omv6qw.png',
   },
   {
     id: 'Web Branding & Brand Identity',
     title: 'Web Branding & Brand Identity',
     description: 'Craft a distinct and memorable brand image through thoughtful design, consistent visuals, and strategic storytelling that sets you apart in the digital space.',
-    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
+    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1756043520/br2_ggsdhf.png ',
   },
   {
     id: 'Digital Marketing Services',
     title: 'Digital Marketing Services',
-    description: 'Boost your reach with targeted strategies in SEO, social media, PPC, and content marketing — driving visibility, engagement, and meaningful conversions.',
-    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
+    description: 'Boost your reach with targeted strategies in SEO, social media, PPC, and content marketing driving visibility, engagement, and meaningful conversions.',
+    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1756043647/br3_hv7fhc.png',
   },
   {
     id: 'UI/UX Design',
     title: 'UI/UX Design',
     description: 'Design seamless, intuitive digital experiences that not only look stunning but also make every interaction effortless and enjoyable for your users.',
-    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1754408596/Project_1_ckgbdp.jpg',
+    imageUrl: 'https://res.cloudinary.com/dpsmum8qz/image/upload/v1756051911/br4_gf31fv.png',
   },
 ];
 
